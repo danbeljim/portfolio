@@ -33,7 +33,8 @@ const projects = [
     description: 'Web escaparate para una frutería familiar en Jaén. Catálogo de productos, información del negocio, reparto a domicilio y contacto con ubicación en mapa.',
     tags: ['Web', 'React', 'Tailwind'],
     platforms: [],
-    url: 'https://fruteria-hermanos-castillo.vercel.app',
+    url: 'https://fruteriahermanoscastillo.net',
+    urlFallback: 'https://fruteria-hermanos-castillo.vercel.app',
     type: 'web',
   },
 ]
@@ -62,6 +63,19 @@ function WebIcon() {
       <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
     </svg>
   )
+}
+
+async function openWithFallback(e, url, fallback) {
+  e.preventDefault()
+  try {
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 3000)
+    await fetch(url, { method: 'HEAD', mode: 'no-cors', signal: controller.signal })
+    clearTimeout(timeout)
+    window.open(url, '_blank')
+  } catch {
+    window.open(fallback, '_blank')
+  }
 }
 
 export default function Projects() {
@@ -157,6 +171,7 @@ export default function Projects() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={project.urlFallback ? (e) => openWithFallback(e, project.url, project.urlFallback) : undefined}
                       className="flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"
                     >
                       Ver proyecto
