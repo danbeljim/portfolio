@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss:*)",
+      "Bash(npm run:*)",
+      "Bash(mkdir -p C:/app/fruteria-hermanos-castillo)",
+      "Read(//c/app/**)",
+      "Bash(npm create:*)",
+      "WebFetch(domain:share.google)",
+      "WebFetch(domain:www.google.com)"
+    ]
+  }
+}
