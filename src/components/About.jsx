@@ -13,6 +13,7 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="space-y-4 text-gray-400 leading-relaxed">
+            <img src="/fotologin.jpg" alt="Andrés Calzado Chica" className="w-28 h-28 rounded-full object-cover mb-4 border-2 border-gray-700" />
             <p>
               Desarrollador Fullstack con <span className="text-white font-medium">3-4 años de experiencia</span>, especializado principalmente en backend con Java 8 y Spring. Enfocado en el desarrollo de aplicaciones robustas y escalables, diseño de APIs REST y gestión de bases de datos SQL Oracle.
             </p>
