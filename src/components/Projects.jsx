@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion'
+import FadeIn from './FadeIn'
+
 const projects = [
   {
     title: 'Socios Fidelity App',
@@ -78,17 +81,33 @@ async function openWithFallback(e, url, fallback) {
   }
 }
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.1, ease: 'easeOut' },
+  }),
+}
+
 export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
-        <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-2">Mi trabajo</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">Proyectos</h2>
+        <FadeIn>
+          <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-2">Mi trabajo</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">Proyectos</h2>
+        </FadeIn>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <div
+          {projects.map((project, i) => (
+            <motion.div
               key={project.title}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
+              variants={cardVariants}
               className={`rounded-xl border p-6 flex flex-col gap-4 transition-colors ${
                 project.type === 'coming'
                   ? 'border-gray-800 bg-gray-900/40 opacity-60'
@@ -184,7 +203,7 @@ export default function Projects() {
                   )}
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

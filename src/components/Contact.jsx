@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import FadeIn from './FadeIn'
 
 export default function Contact() {
   const formRef = useRef()
@@ -28,12 +29,15 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 px-6 bg-gray-900">
       <div className="max-w-5xl mx-auto">
-        <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-2">Hablemos</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Contacto</h2>
-        <p className="text-gray-400 mb-12 max-w-lg">
-          Si tienes un proyecto en mente o quieres ponerte en contacto, no dudes en escribirme.
-        </p>
+        <FadeIn>
+          <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-2">Hablemos</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Contacto</h2>
+          <p className="text-gray-400 mb-12 max-w-lg">
+            Si tienes un proyecto en mente o quieres ponerte en contacto, no dudes en escribirme.
+          </p>
+        </FadeIn>
 
+        <FadeIn delay={0.1}>
         <div className="grid md:grid-cols-2 gap-12">
           {/* Formulario */}
           <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -112,6 +116,7 @@ export default function Contact() {
             </a>
           </div>
         </div>
+        </FadeIn>
       </div>
 
       <div className="max-w-5xl mx-auto mt-20 pt-8 border-t border-gray-800 text-center text-gray-600 text-sm">
