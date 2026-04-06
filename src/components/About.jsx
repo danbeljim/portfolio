@@ -25,7 +25,6 @@ export default function About() {
           </div>
 
           <div>
-            <img src="/fotologin.jpg" alt="Andrés Calzado Chica" className="w-40 h-40 rounded-full object-cover mb-6 border-2 border-gray-700" />
             <h3 className="text-white font-semibold mb-4">Tecnologías</h3>
             <div className="flex flex-wrap gap-2">
               {skills.map(skill => (
