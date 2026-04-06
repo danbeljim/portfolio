@@ -29,12 +29,12 @@ const projects = [
     type: 'web',
   },
   {
-    title: 'Próximamente...',
-    description: 'Nuevo proyecto en desarrollo. Pronto disponible.',
-    tags: [],
+    title: 'Frutería Hermanos Castillo',
+    description: 'Web escaparate para una frutería familiar en Jaén. Catálogo de productos, información del negocio, reparto a domicilio y contacto con ubicación en mapa.',
+    tags: ['Web', 'React', 'Tailwind'],
     platforms: [],
-    url: null,
-    type: 'coming',
+    url: 'https://fruteriahermanoscastillo.net',
+    type: 'web',
   },
 ]
 

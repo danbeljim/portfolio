@@ -8,7 +8,8 @@
       "Read(//c/app/**)",
       "Bash(npm create:*)",
       "WebFetch(domain:share.google)",
-      "WebFetch(domain:www.google.com)"
+      "WebFetch(domain:www.google.com)",
+      "WebFetch(domain:portfolio-phi-gold-ixr3szrkiy.vercel.app)"
     ]
   }
 }
