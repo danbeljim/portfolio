@@ -33,7 +33,7 @@ const projects = [
     description: 'Web escaparate para una frutería familiar en Jaén. Catálogo de productos, información del negocio, reparto a domicilio y contacto con ubicación en mapa.',
     tags: ['Web', 'React', 'Tailwind'],
     platforms: [],
-    url: 'https://fruteriahermanoscastillo.net',
+    url: 'https://fruteria-hermanos-castillo.vercel.app',
     type: 'web',
   },
 ]
