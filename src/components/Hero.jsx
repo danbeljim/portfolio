@@ -8,7 +8,13 @@ const item = (delay = 0) => ({
 
 export default function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-6">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+      {/* Fondo animado */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <div className="blob blob-1" />
+        <div className="blob blob-2" />
+        <div className="blob blob-3" />
+      </div>
       <div className="max-w-5xl w-full py-24 md:py-0 flex flex-col md:flex-row md:items-center md:gap-16">
         <motion.img
           src="/fotologin.jpg"
